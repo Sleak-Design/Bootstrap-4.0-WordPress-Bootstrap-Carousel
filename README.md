@@ -1,3 +1,5 @@
+<?php
+
 function custom_bootstrap_slider() {
 	$labels = array(
 		'name'               => _x( 'Slider', 'post type general name'),
