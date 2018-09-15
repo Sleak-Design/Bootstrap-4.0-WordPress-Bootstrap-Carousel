@@ -1,6 +1,5 @@
 # Bootstrap-4.0-WordPress-Bootstrap-Carousel
 
-<?php
 /*
 Plugin Name:  Bootstrap4_wordpress_carousel
 Plugin URI:   https://developer.wordpress.org/sleakdesign
@@ -13,6 +12,7 @@ License URI:  https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain:  
 Domain Path:  /languages
 */
+
 function sleak_scripts() {
 // Registering Bootstrap style
 wp_enqueue_style( 'bootstrap_min', get_stylesheet_directory_uri().'/css/bootstrap.min.css' );
@@ -25,9 +25,8 @@ wp_enqueue_script( 'bootstrap_min', get_template_directory_uri() . '/js/bootstra
 }
 add_action( 'wp_enqueue_scripts', 'sleak_scripts' );
 add_action( 'init', 'custom_bootstrap_slider' );
-/**
- * Register a Custom post type for.
- */
+
+
 function custom_bootstrap_slider() {
 	$labels = array(
 		'name'               => _x( 'Slider', 'post type general name'),
