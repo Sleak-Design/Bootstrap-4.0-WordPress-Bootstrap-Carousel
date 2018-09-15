@@ -32,6 +32,7 @@
 		</a>
 		</div>
 		
+		This Is a basic way to get started !!
 		
 		function custom_bootstrap_slider() {
 	$labels = array(
