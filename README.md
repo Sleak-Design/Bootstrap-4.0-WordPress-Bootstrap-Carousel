@@ -34,11 +34,25 @@
 		
 		This Is a basic way to get started !!
 		
-		function custom_bootstrap_slider() {
+add_action( 'init', 'custom_bootstrap_slider' );
+
+function sleak_slider() {
+// Registering Bootstrap style
+wp_enqueue_style( 'bootstrap_min', get_stylesheet_directory_uri().'/assets/css/bootstrap.min.css' );
+
+wp_enqueue_script('jquery');
+//Registering Bootstrap Script
+wp_enqueue_script( 'bootstrap_min', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array(), '', true );
+}
+add_action( 'wp_enqueue_scripts', 'sleak_slider' );
+/**
+ * Register a Custom post type for.
+ */
+function custom_bootstrap_slider() {
 	$labels = array(
 		'name'               => _x( 'Slider', 'post type general name'),
 		'singular_name'      => _x( 'Slide', 'post type singular name'),
-		'menu_name'          => _x( 'Bootstrap 4 Slider', 'admin menu'),
+		'menu_name'          => _x( 'Sleak Slider', 'admin menu'),
 		'name_admin_bar'     => _x( 'Slide', 'add new on admin bar'),
 		'add_new'            => _x( 'Add New', 'Slide'),
 		'add_new_item'       => __( 'Name'),
@@ -67,9 +81,8 @@
 		'has_archive'        => true,
 		'hierarchical'       => true,
 		'menu_position'      => null,
-		'susleakorts'           => array('title','editor','thumbnail')
+		'supports'           => array('title','editor','thumbnail')
 	);
 
 	register_post_type( 'slider', $args );
 }
-           
